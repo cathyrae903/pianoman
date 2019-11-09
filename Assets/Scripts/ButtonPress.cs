@@ -27,10 +27,12 @@ public class ButtonPress : MonoBehaviour
     {
         // Remember start position of button
         startPosition = transform.localPosition;
+		Debug.Log("Start");
     }
 
     void Update()
     {
+		Debug.Log("HAHAHAHAHAHAHA");
         released = false;
 
         // Use local position instead of global, so button can be rotated in any direction
@@ -45,7 +47,7 @@ public class ButtonPress : MonoBehaviour
 
         //Get distance of button press. Make sure to only have one moving axis.
         Vector3 allDistances = transform.localPosition - startPosition;
-		float distance;
+		float distance = 0;
         if (!lockX) {
 			distance = Math.Abs(allDistances.x);
 		}
@@ -60,6 +62,7 @@ public class ButtonPress : MonoBehaviour
         //Activate pressed button
         if (pressComplete >= 0.7f && !pressed)
         {
+			Debug.Log("Hello World!");
             pressed = true;
             //Change color of object to activation color
             StartCoroutine(ChangeColor(gameObject, inactiveColor, activeColor, 0.2f));
