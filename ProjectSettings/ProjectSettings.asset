@@ -641,10 +641,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 2217c025-c1ef-4113-8ce8-2b6ec9f62be1
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: piano-man
+  organizationId: grncheetah
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
