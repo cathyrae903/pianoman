@@ -32,7 +32,7 @@ public class ButtonPress : MonoBehaviour
 
     void Update()
     {
-		Debug.Log("HAHAHAHAHAHAHA");
+		//Debug.Log("HAHAHAHAHAHAHA");
         released = false;
 
         // Use local position instead of global, so button can be rotated in any direction
@@ -57,8 +57,13 @@ public class ButtonPress : MonoBehaviour
         if (!lockZ) {
 			distance = Math.Abs(allDistances.z);
 		}
-        float pressComplete = Mathf.Clamp(1 / activationDistance * distance, 0f, 1f);
+        float pressComplete = Mathf.Clamp(distance / activationDistance, 0f, 1f);
 
+		Debug.Log(pressComplete);
+		Debug.Log(activationDistance);
+		Debug.Log(distance);
+		Debug.Log("-------------------------------");
+		
         //Activate pressed button
         if (pressComplete >= 0.7f && !pressed)
         {
