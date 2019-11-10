@@ -6,6 +6,8 @@ using System;
 public class ButtonPress : MonoBehaviour
 {
 
+	public AudioSource key;
+	
     public bool lockX;
     public bool lockY;
     public bool lockZ;
@@ -27,7 +29,8 @@ public class ButtonPress : MonoBehaviour
     {
         // Remember start position of button
         startPosition = transform.localPosition;
-		Debug.Log("Start");
+		
+		key = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,7 +46,7 @@ public class ButtonPress : MonoBehaviour
         transform.localPosition = localPos;
 
         // Return button to startPosition
-        transform.localPosition = Vector3.Lerp(transform.localPosition, startPosition, Time.deltaTime * returnSpeed);
+        //transform.localPosition = Vector3.Lerp(transform.localPosition, startPosition, Time.deltaTime * returnSpeed);
 
         //Get distance of button press. Make sure to only have one moving axis.
         Vector3 allDistances = transform.localPosition - startPosition;
@@ -62,14 +65,20 @@ public class ButtonPress : MonoBehaviour
 		Debug.Log(pressComplete);
 		Debug.Log(activationDistance);
 		Debug.Log(distance);
+		Debug.Log(pressed);
 		Debug.Log("-------------------------------");
 		
         //Activate pressed button
-        if (pressComplete >= 0.7f && !pressed)
+        if (pressComplete >= 0.85f && !pressed)
         {
-			Debug.Log("Hello World!");
+			//Debug.Log("Hello World!");
             pressed = true;
             //Change color of object to activation color
+	
+			Debug.Log("Whats good");
+			if (!key.isPlaying) {
+				key.Play();
+			}
             StartCoroutine(ChangeColor(gameObject, inactiveColor, activeColor, 0.2f));
         }
         //Dectivate unpressed button
