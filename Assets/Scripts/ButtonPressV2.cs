@@ -67,7 +67,13 @@ public class ButtonPressV2 : MonoBehaviour
 				Debug.Log("RISE");
 				transform.localPosition = transform.localPosition + new Vector3(0, .05f * (Time.deltaTime), 0);
 			}
-			
+		}
+		
+		Vector3 vel = rb.velocity;
+		
+		if (vel[0] != 0 || vel[2] != 0) {
+			rb.velocity = new Vector3(0, 0, 0);
+			transform.localPosition = new Vector3(startPosition.x, startPosition.y, startPosition.z);
 		}
     }
 }
