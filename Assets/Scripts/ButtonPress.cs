@@ -78,7 +78,7 @@ public class ButtonPress : MonoBehaviour
 			Debug.Log("Whats good");
 			if (!key.isPlaying) {
 				key.Play();
-			}
+			}	
             StartCoroutine(ChangeColor(gameObject, inactiveColor, activeColor, 0.2f));
         }
         //Dectivate unpressed button
