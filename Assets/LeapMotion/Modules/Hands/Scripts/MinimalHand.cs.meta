@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: d40ef31d174d53f4fb7e58257eebcb2e
-timeCreated: 1454982919
-licenseType: Pro
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - _palmMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
